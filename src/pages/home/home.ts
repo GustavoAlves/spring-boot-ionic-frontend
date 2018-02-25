@@ -15,7 +15,7 @@ export class HomePage {
     senha: ''
   }
 
-  constructor(
+  public constructor(
     public navCtrl: NavController,
     public menu: MenuController,
     public auth: AuthService) {
