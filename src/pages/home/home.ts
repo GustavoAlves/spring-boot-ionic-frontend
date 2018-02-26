@@ -26,6 +26,17 @@ export class HomePage {
     this.menu.swipeEnable(false);
   }
 
+  public ionViewDidEnter() {
+    this.auth.refreshToken(this.creds)
+      .subscribe(
+        response => {
+          this.auth.successfulLogin(response.headers.get('Authorization'));
+          this.navCtrl.setRoot('CategoriasPage');
+        },
+        error => { }
+      );
+  }
+
   public ionViewDidLeave() {
     this.menu.swipeEnable(true);
   }

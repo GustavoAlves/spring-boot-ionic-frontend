@@ -26,6 +26,17 @@ export class AuthService {
         );
     }
 
+    public refreshToken(creds: CredenciaisDTO) {
+        return this.http.post(
+            `${API_CONFIG.baseUrl}/auth/refresh_token`,
+            {},
+            {
+                observe: 'response',
+                responseType: 'text'
+            }
+        );
+    }
+
     public successfulLogin(authorizationValue: string) {
         let tok = authorizationValue.substring(7); // Remove "Bearer "
         let user: LocalUser = {
