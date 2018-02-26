@@ -52,4 +52,8 @@ export class HomePage {
       );
   }
 
+  public signup() {
+    this.navCtrl.push('SignupPage');
+  }
+
 }
