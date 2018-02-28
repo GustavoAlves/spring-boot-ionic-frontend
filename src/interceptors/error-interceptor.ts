@@ -3,7 +3,7 @@ import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HTTP_INTERCEPTORS
 import { Observable } from 'rxjs/Rx'; // IMPORTANTE: IMPORT ATUALIZADO
 import { StorageService } from '../services/storage.service';
 import { AlertController } from 'ionic-angular';
-import { FieldMessage } from '../models/field_message';
+import { FieldMessage } from '../models/field-message';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
