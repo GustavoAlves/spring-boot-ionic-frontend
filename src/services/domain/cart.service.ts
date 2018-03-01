@@ -42,4 +42,58 @@ export class CartService {
         return cart;
     }
 
+    public removeProduto(produto: ProdutoDTO): Cart {
+        let cart: Cart = this.getCart();
+        let position = cart.items.findIndex(x => x.produto.id == produto.id);
+
+        if (position >= 0) {
+            cart.items.splice(position, 1);
+        }
+
+        this.storage.setCart(cart);
+
+        return cart;
+    }
+
+    public increaseQuantity(produto: ProdutoDTO): Cart {
+        let cart: Cart = this.getCart();
+        let position = cart.items.findIndex(x => x.produto.id == produto.id);
+
+        if (position >= 0) {
+            cart.items[position].quantidade++;
+        }
+
+        this.storage.setCart(cart);
+
+        return cart;
+    }
+
+    public decreaseQuantity(produto: ProdutoDTO): Cart {
+        let cart: Cart = this.getCart();
+        let position = cart.items.findIndex(x => x.produto.id == produto.id);
+
+        if (position >= 0) {
+            if (cart.items[position].quantidade > 1) {
+                cart.items[position].quantidade--;
+            } else {
+                cart.items.splice(position, 1);
+            }
+        }
+
+        this.storage.setCart(cart);
+
+        return cart;
+    }
+
+    public total(): number {
+        let cart: Cart = this.getCart();
+        let sum: number = 0;
+
+        for (let i = 0; i < cart.items.length; i++) {
+            sum += cart.items[i].produto.preco * cart.items[i].quantidade;
+        }
+
+        return sum;
+    }
+
 }
