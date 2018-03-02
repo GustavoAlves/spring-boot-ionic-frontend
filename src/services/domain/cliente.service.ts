@@ -13,6 +13,10 @@ export class ClienteService {
         public storage: StorageService) {
     }
 
+    public findById(id: string) {
+        return this.http.get(`${API_CONFIG.baseUrl}/clientes/${id}`);
+    }
+
     public findByEmail(email: string) {
         return this.http.get(`${API_CONFIG.baseUrl}/clientes/email?value=${email}`);
     }
