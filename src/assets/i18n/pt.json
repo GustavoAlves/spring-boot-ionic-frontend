@@ -1,0 +1,13 @@
+{
+    "HOME_PAGE": {
+        "PAGE_TITLE": "Sistema de Pedidos",
+        "BUTTONS": {
+            "btn_sign_in": "Entrar",
+            "btn_sign_up": "Registrar"
+        },
+        "IN_APP": {
+            "Email": "Email",
+            "Password": "Senha"
+        }
+    }
+}

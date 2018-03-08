@@ -1,0 +1,13 @@
+{
+    "HOME_PAGE": {
+        "PAGE_TITLE": "Ordering System",
+        "BUTTONS": {
+            "btn_sign_in": "Sign in",
+            "btn_sign_up": "Sign up"
+        },
+        "IN_APP": {
+            "Email": "Email",
+            "Password": "Password"
+        }
+    }
+}
